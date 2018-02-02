@@ -1,12 +1,22 @@
 <style>
     #boxWelcome{
-        background-color: #0eafc7;
+        background-color: #313A44;
         color: white;
-        margin: 18px;
+        margin: 10px;
+    }
+    #logoBg {
+        background-image: url("./static/mining_bg.png");
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat;
+        height: 400px;
+        line-height: 400px;
+        text-align: center;
     }
     #logoImg{
-        height: 285px;
-        margin: 55px;
+        max-width: 100%;
+        max-height: 100%;
+        vertical-align: middle;
     }
     #welcomeText{
         font-size: 2.7em;
@@ -18,8 +28,12 @@
         padding: 0 !important;
         margin: 0 0 0 18px !important;
     }
-    #welcomeItems > li{
-        margin: 30px !important;
+    #welcomeItems > dt {
+        margin-bottom: 5px !important;
+    }
+    #welcomeItems > dd{
+        font-size: 1.1rem;
+        margin-bottom: 10px !important;
     }
     #boxesLower {
         margin: 0 9px;
@@ -29,8 +43,8 @@
     }
     #boxesLower > div > div {
         flex: 1 1 auto;
-        margin: 0 9px 18px 9px;
         padding: 10px;
+        margin-bottom: 10px;
         display: flex;
         flex-direction: column;
     }
@@ -39,12 +53,13 @@
         margin: 0 0 5px 10px;
     }
 
-
     #boxStatsLeft{
-        background-color: #b064e1;
+        background-color: #269E97;
+        margin-right: 5px;
     }
     #boxStatsRight{
-        background-color: #10bb9c;
+        background-color: #4F77A4;
+        margin-left: 5px;
     }
     .boxStats{
         color: white;
@@ -69,23 +84,46 @@
     .boxStatsList > div > div{
         padding: 3px;
     }
-
-
+    .alert-secondary {
+        color: #333;
+        background-color: #f5f5f5;
+        border-color: #CCC;
+    }
+    .alert {
+        position: relative;
+        padding: .75rem 1.25rem;
+        margin-right: 1.6em;
+        font-size: .9rem;
+        border: 1px solid transparent;
+        border-radius: .25rem;
+    }
 </style>
 
 
 <div class="pure-g-r" id="boxWelcome">
-    <div class="pure-u-1-3">
-        <img id="logoImg" src="/static/logo.svg">
+    <div class="pure-u-1-3" id="logoBg">
+        <img id="logoImg" src="/static/mining_icon.png">
     </div>
     <div class="pure-u-2-3">
         <div id="welcomeText">Welcome to the future of mining</div>
+        <dl id="welcomeItems">
+            <dt>1) Cpuminer program setup</dt>
+            <dd>https://github.com/pooler/cpuminer</dd>
+            <dt>2) Replace your_address to your real receive address and run command</dt>
+            <dd>
+                <div class="alert alert-secondary">
+                    minerd.exe -t 1 -a scrypt --url stratum+tcp://mine.bitchk.com:13308 --userpass your_address:xx
+                </div>
+            </dd>
+            <dt>3) Current mining pool fee : 50%</dt>
+            <dd>If mining pool is activated, it will be stepped down to 0.5%</dd>
+        </dl>
+        <!--
         <ul id="welcomeItems">
-            <li>Low fees</li>
-            <li>High performance Node.js backend</li>
-            <li>User friendly mining client</li>
-            <li>Multi-coin / multi-pool</li>
+            <li>Replace your_address to your real receive address and run command</li>
+            <li>Current mining pool fee : 50%</li>
         </ul>
+        -->
     </div>
 </div>
 
