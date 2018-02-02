@@ -1,6 +1,6 @@
 {
     "apps": [{
-        "name": "nomp",
+        "name": "nomp-qct",
         "script": "init.js",
         "watch": true,
         "exec_interpreter": "node@0.10.48"
